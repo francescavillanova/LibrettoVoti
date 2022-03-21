@@ -10,7 +10,7 @@ public class TestLibretto {
 		lib.add(new Voto("Fisica 1", 18));
 		lib.add(new Voto("Algebra lineare", 25));
 		
-		System.out.println(lib) ;
+		System.out.println(lib) ; //perchè gli oggetti di tipo libretto siano stampabili serve il metodo toString
 		
 		System.out.println("Voti pari a 25");
 		Libretto lib25 = lib.filtraPunti(25);

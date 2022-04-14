@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +51,8 @@ public class LibrettoDAO {
 			 while(res.next()) {  
 				 String nome=res.getString("nome");
 				 int punti=res.getInt("punti");
-				 result.add(new Voto(nome, punti));
+				 LocalDate dataEsame=res.getDate("data").toLocalDate();
+				 result.add(new Voto(nome, punti, dataEsame));
 				 
 			 }
 			 st.close();
@@ -65,8 +67,5 @@ public class LibrettoDAO {
 		
 	}
 	
-	public Voto readVotoByNome(String nome) {
-		
-	}
 
 }

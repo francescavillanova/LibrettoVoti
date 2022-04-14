@@ -8,6 +8,8 @@ import it.polito.tdp.librettovotidb.LibrettoDAO;
 public class Libretto {
 
 	
+	private List<Voto> voti;
+
 	public Libretto() {
 	}
 	
@@ -22,7 +24,7 @@ public class Libretto {
 		return dao.readAllVoto();
 	}
 	
-/*	public String toString() {
+	public String toString() {
 		return this.voti.toString() ; //dato che riguarda la variabile voto, anche la classe Voto ha bisogn del toString
 	}
 	
@@ -53,7 +55,7 @@ public class Libretto {
 	  return punteggio numerico, oppure null se l'esame non esiste
 	 */
 	
-/*	public boolean isDuplicato(Voto v) {
+	public boolean isDuplicato(Voto v) {
 		for(Voto v1: this.voti) {
 			if(v1.equals(v))  //per poterlo fare la classe Voto deve avere equals49
 				return true ;
@@ -84,7 +86,7 @@ public class Libretto {
 			if(punti>30)
 				punti=30;
 			
-			nuovo.add(new Voto(v.getNome(), punti));
+			nuovo.add(new Voto(v.getNome(), punti, v.getData()));
 			
 			//al posto di add new Voto avrei potuto scrivere:
 			// v.setPunti(punti);
@@ -99,5 +101,5 @@ public class Libretto {
 			if(v.getPunti()>punti)
 				this.voti.remove(v);  //voto ha il metodo equals quindi va bene
 		}
-	}*/
+	}
 }
